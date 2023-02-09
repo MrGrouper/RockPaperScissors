@@ -8,25 +8,35 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class = "title_container">
+        <div id ="title">Rock Paper Scissors</div>
+        <div id = "intro">Show me what you got</div>
+        <div id = "best_of">First to 5 wins</div>
+    </div>
     <div class = "scoreboard"> 
-        <div class = score_label>You
+        <div class = "score_label">Your score:
             <div id = "player_score"></div>
         </div>
-        <div class = score_label>Round
+        <div class = "score_label">Round
             <div id = "round"></div>
         </div>
-        <div class = score_label>Computer
+        <div class = "score_label">Computer score:
             <div id = "computer_score"></div>
         </div>
     </div>
 
-    <div id="container">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div class="score_container">
+        <button id="rock_btn">Rock</button>
+        <button id="paper_btn">Paper</button>
+        <button id="scissors_btn">Scissors</button> 
     </div>
-    
+    <div class = "info_container">
+        <div id = "info"></div>
+    </div>
+    <div class = "reset_container">
+        <button id = "reset">Play again?</button>
+    </div>
+
     
 </body>
 </html>
