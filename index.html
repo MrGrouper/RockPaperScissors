@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors!</title>
     <script src="script.js" defer></script>
-</head>
-<body>
-    <div class = "title_container">
-        <div id ="title">Rock Paper Scissors</div>
-        <div id = "intro">Show me what you got</div>
-        <div id = "best_of">First to 5 wins</div>
-    </div>
-    <div class = "scoreboard"> 
-        <div class = "score_label">Your score:
-            <div id = "player_score"></div>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game_container">
+      <div class="title_container">
+        <div id="title"><h1>Rock Paper Scissors</h1></div>
+        <button class="button" id="invest">Invest</button>
+      </div>
+      <div class="scoreboard">
+        <div class="p_score_container">
+          <div id="player_score"></div>
+          <div class="score_label">You</div>
         </div>
-        <div class = "score_label">Round
-            <div id = "round"></div>
+        <div class="info_container">
+          <div id="info"></div>
+          <div id="best_of">First to 5 wins</div>
         </div>
-        <div class = "score_label">Computer score:
-            <div id = "computer_score"></div>
+        <div class="c_score_container">
+          <div id="computer_score"></div>
+          <div class="score_label">Computer</div>
         </div>
-    </div>
+      </div>
 
-    <div class="score_container">
-        <button id="rock_btn">Rock</button>
-        <button id="paper_btn">Paper</button>
-        <button id="scissors_btn">Scissors</button> 
+      <div class="play_container">
+        <div class="choices">
+          <button class="button" id="rock_btn">Rock</button>
+          <button class="button" id="paper_btn">Paper</button>
+          <button class="button" id="scissors_btn">Scissors</button>
+        </div>
+        <div class="hand_container">
+          <div class="hand_display">
+            <div id="p_hand"></div>
+            <div id="c_hand"></div>
+          </div>
+          <div class="round_display">
+            <div id="round"></div>
+          </div>
+        </div>
+        <div class="choices">
+          <div class="button" id="rock_btn">Rock</div>
+          <div class="button" id="paper_btn">Paper</div>
+          <div class="button" id="scissors_btn">Scissors</div>
+        </div>
+      </div>
+      <div class="reset_container">
+        <button class="button" id="reset">Reset</button>
+      </div>
     </div>
-    <div class = "info_container">
-        <div id = "info"></div>
-    </div>
-    <div class = "reset_container">
-        <button id = "reset">Play again?</button>
-    </div>
-
-    
-</body>
+  </body>
 </html>

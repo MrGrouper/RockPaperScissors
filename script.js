@@ -1,4 +1,4 @@
-// // Initiate scores
+// // Initiate scores, round, and text
 var playerScore = 0;
 var computerScore = 0;
 var round = 0;
@@ -9,8 +9,10 @@ function initiate(){
 playerScore = 0;
 computerScore = 0;
 round = 0;
+document.getElementById("p_hand").textContent = ' ';
+document.getElementById("c_hand").textContent = ' ';
 document.getElementById("player_score").textContent = playerScore;
-document.getElementById("round").textContent = round;
+document.getElementById("round").textContent = '';
 document.getElementById("computer_score").textContent = computerScore;
 document.getElementById("info"
   ).textContent = "Can you beat the computer?"
@@ -20,17 +22,20 @@ document.getElementById("info"
 var rockBtn = document.querySelector('#rock_btn');
 rockBtn.addEventListener("click", () => {
     game('rock');
+    
   })
   var paperBtn = document.querySelector('#paper_btn');
   paperBtn.addEventListener("click", () => {
       game('paper');
+     
     })
    var scissorsBtn = document.querySelector('#scissors_btn');
 scissorsBtn.addEventListener("click", () => {
     game('scissors');
+    
   })
 
-  //Reset button reset scores, display intro message
+  //Reset button reset scores, display intro message by calling initate funtion
 const resetBtn = document.querySelector('#reset')
 resetBtn.addEventListener("click", () => {
     initiate();
@@ -47,6 +52,8 @@ function getComputerChoice() {
 function playRound(player) {
   // If player throw same thing its a tie
   var computer = getComputerChoice();
+  document.getElementById("p_hand").textContent = player[0].toUpperCase() + player.slice(1);
+  document.getElementById("c_hand").textContent = computer[0].toUpperCase() + computer.slice(1);
   if (player === computer) {
     document.getElementById("info").textContent = "Tie! Shoot again";
     return playerScore;
@@ -65,7 +72,7 @@ function playRound(player) {
     else {
     document.getElementById(
       "info"
-    ).textContent = "You lose that hand!";
+    ).textContent = "Sucker";
     return computerScore;
     }
   }
@@ -79,7 +86,7 @@ function playRound(player) {
     else {
     document.getElementById(
       "info"
-    ).textContent = "You Win that hand!";
+    ).textContent = "Nice!";
     return playerScore;
     }
   }
@@ -91,22 +98,14 @@ function game(player) {
     return;
   
   } else if (playerScore === 5) {
-    document.getElementById("info").textContent = "You Win the round!";
+    document.getElementById("info").textContent = "You Win!";
     return;
   } else {
     round++;
     playRound(player);
     document.getElementById("player_score").textContent = playerScore;
-    document.getElementById("round").textContent = round;
+    document.getElementById("round").textContent = 'Round ' + round;
     document.getElementById("computer_score").textContent = computerScore;
   }
 }
 
-// function playAgain(){
-// playerScore === 0;
-// computerScore === 0;
-// round === 0;
-// document.getElementById("info"
-//   ).textContent = "Can you beat the computer?"
-//   return;
-// }
