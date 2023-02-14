@@ -9,13 +9,13 @@ function initiate(){
 playerScore = 0;
 computerScore = 0;
 round = 0;
-document.getElementById("p_hand").textContent = ' ';
-document.getElementById("c_hand").textContent = ' ';
-document.getElementById("player_score").textContent = playerScore;
-document.getElementById("round").textContent = '';
-document.getElementById("computer_score").textContent = computerScore;
+document.getElementById("p_hand").textContent = '🧍🏽‍♀️';
+document.getElementById("c_hand").textContent = '🖥';
+document.getElementById("player_score").textContent = 'Player: ' + playerScore;
+document.getElementById("computer_score").textContent = 'Computer: '+computerScore;
 document.getElementById("info"
-  ).textContent = "Can you beat the computer?"
+  ).textContent = "Can you beat the computer?" +"\n" + "First to 5 wins!"
+  document.getElementById("reset").textContent ="Reset";
   return;
 }
 //Takes players click selection
@@ -50,10 +50,19 @@ function getComputerChoice() {
 // Play rock paper scissors: compare player selection and computer selection and declare winner
 
 function playRound(player) {
+
+    document.getElementById("p_hand").textContent = '';
+    document.getElementById("c_hand").textContent = '';
+    document.getElementById("reset").textContent ="Reset";
   // If player throw same thing its a tie
   var computer = getComputerChoice();
-  document.getElementById("p_hand").textContent = player[0].toUpperCase() + player.slice(1);
-  document.getElementById("c_hand").textContent = computer[0].toUpperCase() + computer.slice(1);
+
+  var newElp = document.getElementById(player+'_btn').cloneNode(true);
+  document.getElementById("p_hand").appendChild(newElp);
+
+  var newElc = document.getElementById(computer+'_btn').cloneNode(true);
+  document.getElementById("c_hand").appendChild(newElc)
+
   if (player === computer) {
     document.getElementById("info").textContent = "Tie! Shoot again";
     return playerScore;
@@ -72,7 +81,7 @@ function playRound(player) {
     else {
     document.getElementById(
       "info"
-    ).textContent = "Sucker";
+    ).textContent = `You lose! ${computer[0].toUpperCase()+computer.slice(1)} beats ${player}`;
     return computerScore;
     }
   }
@@ -86,7 +95,7 @@ function playRound(player) {
     else {
     document.getElementById(
       "info"
-    ).textContent = "Nice!";
+    ).textContent = `${player[0].toUpperCase()+player.slice(1)} beats ${computer}! Nice!`;
     return playerScore;
     }
   }
@@ -95,17 +104,18 @@ function playRound(player) {
 function game(player) {
   if (computerScore === 5) {
     document.getElementById("info").textContent = "You lose!";
+    document.getElementById("reset").textContent ="Play again?";
     return;
   
   } else if (playerScore === 5) {
     document.getElementById("info").textContent = "You Win!";
+    document.getElementById("reset").textContent ="Play again?";
     return;
   } else {
     round++;
     playRound(player);
-    document.getElementById("player_score").textContent = playerScore;
-    document.getElementById("round").textContent = 'Round ' + round;
-    document.getElementById("computer_score").textContent = computerScore;
+    document.getElementById("player_score").textContent = 'Player: '+ playerScore;
+    document.getElementById("computer_score").textContent = 'Computer: ' + computerScore;
   }
 }
 

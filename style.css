@@ -1,121 +1,125 @@
+:root {
+    --primary-light: #ddd;
+    --primary-dark: #222831;
+    --secondary-dark: #393e46;
+    --secondary-dark-hover: #4a4f57;
+    --secondary-dark-active: #5b5f68;
+    --header: #111720;
+    --primary-yellow: #fac650;
+  }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
     font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;
     text-align: center;
-    background-color: grey;
+    margin-bottom: 100px;
 }
-.button {
-    border: solid;  
-    border-radius: 5px;
-}
-.game_container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  /* Title box*/
+  
+  .title_container {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0px;
+      background-color: var(--header);
+    }
+    #title {
+        font-size: 32px; 
+    }
+    
+   /* main */
 
-/* Title box*/
+    .game_container {
+    margin-top: 40px;
+    text-align: center;
+    }
 
-.title_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-#title {
-    font-size: 50px; 
-}
+    .info_text {
+        font-size: 30px;
+    }
 
-#invest {
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-}
-
-/*Score box*/
+    /*Score box*/
 
 .scoreboard {
     display: flex;
-    flex-direction: row;
-   justify-content: center;
-   padding :5px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-.p_score_container, .c_score_container {
+.score_info {
+    font-size: 20px;
+}
+
+.score_container {
     display: flex;
     flex-direction: column;
 }
 
-#player_score, #computer_score {
-    width: 350px;
-    font-size: 80px;
-}
-
-.score_label {
-    font-size: 35px;
-}
-#best_of {
-    font-size: 35px;
-    padding: 5px;
-    justify-content: center;
-    align-content: center;
-}
-.info_container {
-    display: flex;
-    flex-direction: column-reverse;
-    font-size: 35px;
-    justify-content: center;
-    align-content: center;
-    margin: auto;
-}
-#info {
-    padding: 15px;
-
-}
-
-/*Play container*/
-
-.play_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.hand {
+    font-size: 50px;
+    width: 160px;
+    height: 160px;
+    text-align: center;
+    padding: 30px 0;
+    color: black;
 }
 
 .choices {
     display: flex;
-    flex-direction: column;
+    justify-content: center ;
+    gap: 10px;
+    padding: 20px;
 }
 
-.hand_container {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-}
-.hand_display {
-    display: flex;  
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 60px;
+.button_container {
+    width: 160px;
+    height:160px;
 }
 
-.round_display {
+
+img {
+width: 60%;
+height:60%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-}
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: var(--primary-light);
+    font-size: 10px;
+    background-color: rgba(24, 24, 37, 0.324);
+  }
 
-.score_label, #round {
-    font-size: 20px;
-}
-
-#rock_btn, #paper_btn, #scissors_btn, #reset {
-
-    border: solid;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    width: 250px;
-    font-size: 25px;
-}

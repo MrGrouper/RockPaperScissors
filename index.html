@@ -9,50 +9,49 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="title_container">
+      <div id="title"><h1>Rock Paper Scissors</h1></div>
+    </div>
     <div class="game_container">
-      <div class="title_container">
-        <div id="title"><h1>Rock Paper Scissors</h1></div>
-        <button class="button" id="invest">Invest</button>
-      </div>
-      <div class="scoreboard">
-        <div class="p_score_container">
-          <div id="player_score"></div>
-          <div class="score_label">You</div>
-        </div>
-        <div class="info_container">
-          <div id="info"></div>
-          <div id="best_of">First to 5 wins</div>
-        </div>
-        <div class="c_score_container">
-          <div id="computer_score"></div>
-          <div class="score_label">Computer</div>
+      <div class="info_container">
+        <div class = "info_text" id="info"></div>
+        <div class="scoreboard">
+          <div class="score_container">
+            <div class = "hand" id="p_hand"></div>
+            <div class="score_info" id="player_score"></div>
+          </div>
+          <div class = "vs">VS</div>
+          <div class="score_container">
+            <div class = "hand" id="c_hand"></div>
+            <div class="score_info" id="computer_score"></div>
+          </div>
         </div>
       </div>
 
-      <div class="play_container">
         <div class="choices">
-          <button class="button" id="rock_btn">Rock</button>
-          <button class="button" id="paper_btn">Paper</button>
-          <button class="button" id="scissors_btn">Scissors</button>
-        </div>
-        <div class="hand_container">
-          <div class="hand_display">
-            <div id="p_hand"></div>
-            <div id="c_hand"></div>
+          <div class="button_container">
+            <button class="button" id="rock_btn">
+              <img src="rock.jpg" alt="rock" />
+            </button>
           </div>
-          <div class="round_display">
-            <div id="round"></div>
+          <div class="button_container">
+            <button class="button" id="paper_btn">
+              <img src="paper.png" alt="paper" />
+            </button>
+          </div>
+          <div class="button_container">
+            <button class="button" id="scissors_btn">
+              <img src="scissors.png" alt="scissors" />
+            </button>
           </div>
         </div>
-        <div class="choices">
-          <div class="button" id="rock_btn">Rock</div>
-          <div class="button" id="paper_btn">Paper</div>
-          <div class="button" id="scissors_btn">Scissors</div>
-        </div>
-      </div>
+
       <div class="reset_container">
         <button class="button" id="reset">Reset</button>
-      </div>
     </div>
+</div>
+      <div class = "footer">
+        <p>© NickUsaha</p>
+      </div>
   </body>
 </html>
