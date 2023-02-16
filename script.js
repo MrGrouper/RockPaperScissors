@@ -39,7 +39,7 @@ scissorsBtn.addEventListener("click", () => {
 const resetBtn = document.querySelector('#reset')
 resetBtn.addEventListener("click", () => {
     initiate();
-  })
+  }) 
 
 //Generates random computer choice
 function getComputerChoice() {

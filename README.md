@@ -1,2 +1,2 @@
 # RockPaperScissors
-Rock paper scissors game using javascript
+Rock paper scissors game using javascript 
